@@ -200,7 +200,9 @@ class CPU:
             elif instruction == self.XOR:
                 self.pc +=1
                 reg_a = self.ram[self.pc]
-                self.alu('XOR',reg_a,None)
+                self.pc +=1
+                reg_b = self.ram[self.pc]
+                self.alu('XOR',reg_a,reg_b)
             elif instruction == self.SHL:
                 self.pc +=1
                 reg_a = self.ram[self.pc]
